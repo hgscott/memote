@@ -413,7 +413,7 @@ def detect_energy_generating_cycles(model, metabolite_id):
 
     if solution.objective_value > 0.0:
         return (
-            solution.fluxes[solution.fluxes.abs() > 0.0]
+            solution.fluxes[solution.fluxes.abs() > 0.0001]
             .index.drop(["Dissipation"])
             .tolist()
         )
